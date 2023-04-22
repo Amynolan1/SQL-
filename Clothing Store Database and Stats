@@ -1,0 +1,20 @@
+CREATE TABLE clothingstore ( id INTEGER PRIMARY KEY, name TEXT, quanity_in_store INTEGER, aisle INTEGER, price INTEGER, items_sold INTEGER); 
+INSERT into clothingstore VALUES (1, "tank top", 4, 3, 3.50, 3);
+INSERT into clothingstore VALUES (2, "jean jackets", 10, 3, 15, 2); 
+INSERT into clothingstore VALUES (3, "shorts", 12, 4, 25, 12);
+INSERT into clothingstore VALUES (4, "sweat pants", 8, 4, 10, 3);
+INSERT into clothingstore VALUES (5, "jeans", 15, 4, 35, 12);
+INSERT into clothingstore VALUES (6, "SHOES",50, 1, 8, 10);
+INSERT into clothingstore values (7, "scrunchies", 100, 2, 2.50, 15);
+INSERT into clothingstore VALUES (8, "T-Shirts", 53, 3, 12, 19); 
+INSERT into clothingstore VALUES (9, "flannels", 20, 3, 12, 5);
+INSERT into clothingstore VALUES (10, "ear rings", 30, 2, 12, 8);
+INSERT into clothingstore VALUES (11, "cardigans", 15, 3, 17, 4);
+INSERT into clothingstore VALUES (12, "boots", 12, 1, 35, 3);
+INSERT into clothingstore VALUES (13, "Leggings", 20, 4, 20, 13);
+INSERT into clothingstore VALUES (14, "sweatshirts", 23, 3, 40, 14);
+INSERT into clothingstore VALUES (15, "crop tops", 30, 3, 15, 19);
+
+SELECT aisle, SUM(quanity_in_store) FROM clothingstore GROUP BY aisle; 
+SELECT items_sold, SUM(price) FROM clothingstore;
+
