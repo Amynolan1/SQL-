@@ -1,0 +1,23 @@
+CREATE TABLE singers ( id INTEGER PRIMARY KEY,name TEXT, current_age INTEGER);
+INSERT INTO singers VALUES (1, "Taylor Swift", 33);
+INSERT INTO singers VALUES (2, "Dolly Parton", 37);
+INSERT INTO singers VALUES (3, "Adele", 46);
+INSERT INTO singers VALUES (4, "jelly Roll", 38);
+INSERT INTO singers VALUES (5, "Ed Sheeran",30);
+INSERT INTO singers VALUES (6, "elvis Presley", 74);
+INSERT INTO singers VALUES (7, "Whitney Huston", 90);
+INSERT INTO singers VALUES (8," Madonna", 36);
+
+CREATE TABLE about_singers (id INTEGER PRIMARY KEY, number_songs_written INTEGER, state_from TEXT, genre TEXT);
+INSERT INTO about_singers VALUES( 1, 54, "pennsylvania", "pop");
+INSERT INTO about_singers VALUES(2, 5000, "Tennessee", "country");
+INSERT INTO about_singers VALUES (3,28,"london", "pop");
+INSERT INTO about_singers VALUES (4,43, "Tennessee", "rock");
+INSERT INTO about_singers VALUES (5, 26, "california", "pop");
+INSERT INTO about_singers VALUES (6,29, "Florida", "rock");
+INSERT INTO about_singers VALUES(7,86,"Arizona","classical");
+INSERT INTO about_singers VALUES(8,250, "Montana", "Pop");
+
+SELECT singers.name, about_singers.number_songs_written, about_singers.genre FROM singers Join about_singers ON singers.id = about_singers.id 
+GROUP BY name 
+ORDER by number_songs_written DESC;
